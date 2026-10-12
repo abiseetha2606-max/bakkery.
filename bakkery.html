@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cake Waves | Cake Shop</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff8f5;
+    color: #49252c;
+}
+
+header {
+    background: #7b2438;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    animation: glow 2s infinite alternate;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd5df;
+}
+
+.hero {
+    min-height: 450px;
+    padding: 60px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #ffe1e7, #fff5df);
+}
+
+.hero-text {
+    max-width: 500px;
+    animation: slideIn 1.2s ease;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 55px);
+    color: #8b2344;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: #8b2344;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #c44c70;
+    transform: scale(1.08);
+}
+
+.hero-cake {
+    font-size: 150px;
+    animation: float 3s ease-in-out infinite;
+}
+
+section {
+    padding: 65px 7%;
+}
+
+.section-title {
+    text-align: center;
+    color: #8b2344;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.about {
+    text-align: center;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: auto;
+}
+
+.cake-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 25px;
+}
+
+.cake-card {
+    background: white;
+    padding: 25px 18px;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px #d8a7b255;
+    transition: 0.4s;
+    animation: appear 1s ease both;
+}
+
+.cake-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px #b56a8655;
+}
+
+.cake-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.cake-card h3 {
+    color: #8b2344;
+    margin-bottom: 12px;
+}
+
+.price {
+    color: #b52f58;
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.price-list {
+    max-width: 850px;
+    margin: auto;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #f0cbd6;
+    text-align: center;
+}
+
+th {
+    background: #8b2344;
+    color: white;
+}
+
+tr:hover {
+    background: #fff0f4;
+}
+
+.special {
+    text-align: center;
+    background: #ffe7ed;
+}
+
+.contact {
+    text-align: center;
+    line-height: 2;
+}
+
+footer {
+    background: #7b2438;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 3px white; }
+    to { text-shadow: 0 0 15px #ffc1d2; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+        font-size: 14px;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero-cake {
+        font-size: 100px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🎂 Cake Waves</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#cakes">Cakes</a>
+        <a href="#prices">Prices</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Every Cake Tells a Sweet Story!</h1>
+        <p>Delicious cakes for birthdays, celebrations
+        and every special moment.</p>
+        <a href="#cakes" class="btn">Explore Our Cakes</a>
+    </div>
+    <div class="hero-cake">🎂</div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Cake Waves</h2>
+    <div class="about">
+        <p>Welcome to Cake Waves! Discover a delicious
+        collection of chocolate cakes, fruit cakes,
+        mousse cakes and special celebration cakes.</p>
+        <p>Make every occasion sweeter with Cake Waves.</p>
+    </div>
+</section>
+
+<section id="cakes">
+    <h2 class="section-title">Our Cake Flavours</h2>
+
+    <div class="cake-grid">
+        <div class="cake-card">
+            <div class="cake-icon">🍫</div>
+            <h3>Chocolate Cake</h3>
+            <p>Rich and delicious chocolate flavour.</p>
+            <div class="price">From ₹600</div>
+        </div>
+
+        <div class="cake-card">
+            <div class="cake-icon">🍓</div>
+            <h3>Strawberry Cake</h3>
+            <p>Sweet strawberry flavour.</p>
+            <div class="price">From ₹600</div>
+        </div>
+
+        <div class="cake-card">
+            <div class="cake-icon">🫐</div>
+            <h3>Blueberry Cake</h3>
+            <p>A fruity and delightful treat.</p>
+            <div class="price">From ₹600</div>
+        </div>
+
+        <div class="cake-card">
+            <div class="cake-icon">🍰</div>
+            <h3>Black Forest</h3>
+            <p>A classic chocolate cake favourite.</p>
+            <div class="price">From ₹460</div>
+        </div>
+
+        <div class="cake-card">
+            <div class="cake-icon">🥭</div>
+            <h3>Mango Mousse</h3>
+            <p>A creamy mango dessert.</p>
+            <div class="price">From ₹1200</div>
+        </div>
+
+        <div class="cake-card">
+            <div class="cake-icon">🍪</div>
+            <h3>Oreo Cake</h3>
+            <p>A special cake for cookie lovers.</p>
+            <div class="price">From ₹980</div>
+        </div>
+    </div>
+</section>
+
+<section id="prices">
+    <h2 class="section-title">Popular Cake Price List</h2>
+
+    <div class="price-list">
+        <table>
+            <tr>
+                <th>Cake Name</th>
+                <th>500 g</th>
+                <th>700 g</th>
+                <th>1 kg</th>
+            </tr>
+            <tr>
+                <td>Vanilla</td>
+                <td>₹360</td>
+                <td>₹530</td>
+                <td>₹750</td>
+            </tr>
+            <tr>
+                <td>Black Forest</td>
+                <td>₹460</td>
+                <td>₹630</td>
+                <td>₹900</td>
+            </tr>
+            <tr>
+                <td>Butterscotch</td>
+                <td>₹510</td>
+                <td>₹700</td>
+                <td>₹1000</td>
+            </tr>
+            <tr>
+                <td>White Forest</td>
+                <td>—</td>
+                <td>₹770</td>
+                <td>₹1100</td>
+            </tr>
+            <tr>
+                <td>Red Velvet</td>
+                <td>—</td>
+                <td>₹980</td>
+                <td>₹1400</td>
+            </tr>
+            <tr>
+                <td>Chocolate Truffle</td>
+                <td>₹600</td>
+                <td>₹840</td>
+                <td>₹1200</td>
+            </tr>
+        </table>
+    </div>
+    <p style="text-align:center; margin-top:15px;">
+        *Please confirm prices with the shop before ordering.
+    </p>
+</section>
+
+<section class="special">
+    <h2 class="section-title">Special Celebration Cakes 🎉</h2>
+    <p>Birthday Cakes | Wedding Cakes | Custom Cakes</p>
+    <a href="#contact" class="btn">Contact Us</a>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact Cake Waves</h2>
+    <div class="contact">
+        <p>📍 Chennai and other listed locations</p>
+        <p>🎂 Fresh Cakes for Your Special Moments</p>
+        <p>Please contact your nearest Cake Waves branch
+        for orders, delivery and exact pricing.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Cake Waves | Made with ❤️ and Cake</p>
+</footer>
+
+</body>
+</html>
